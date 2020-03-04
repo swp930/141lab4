@@ -58,7 +58,7 @@ logic       SC_IN;         // carry register (loop with ALU)
   assign load_inst = Instruction[8:6]==3'b110;  // calls out load specially
 
 // reg file
-	reg_file #(.W(8),.D(4)) reg_file1 (
+	reg_file #(.W(8),.D(3)) reg_file1 (
 		.CLK    				  ,
 		.write_en  (reg_wr_en)    , 
 		.raddrA    ({1'b0,Instruction[5:3]}),         //concatenate with 0 to give us 4 bits
