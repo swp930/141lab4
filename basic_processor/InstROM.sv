@@ -8,7 +8,7 @@
 //
 // Revision: 
 //
-module InstROM #(parameter A=12, W=10) (
+module InstROM #(parameter A=10, W=9) (
   input       [A-1:0] InstAddress,
   output logic[W-1:0] InstOut);
 	 
@@ -39,7 +39,7 @@ module InstROM #(parameter A=12, W=10) (
   always_comb InstOut = inst_rom[InstAddress];
  
   initial begin		                  // load from external text file
-  	$readmemb("machine_code.txt",inst_rom);
+  	$readmemb("C:/cygwin64/home/swp93/141lab4/machine_code.txt",inst_rom);
   end 
   
 endmodule
